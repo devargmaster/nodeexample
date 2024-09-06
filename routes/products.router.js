@@ -1,53 +1,57 @@
 const express = require('express');
-const ProductsService = require('./../services/product.service')
+const ProductsService = require('./../services/product.service');
+const validatorHandler = require('./../middlewares/validator.hander');
+const { createProductSchema, updateProductSchema, getProductSchema } = require('./../schemas/product.schema');
 const router = express.Router();
 const service = new ProductsService();
 
 //todo lo que es routing deberia ser solo eso y no incluir logica de negocio
-router.get('/',async (req,res)=>{
+router.get('/', async (req, res) => {
   const products = await service.find();
   res.json(products);
- });
+});
 
- router.get('/filter',async (req,res) =>{
+router.get('/filter', async (req, res) => {
   res.send('soy filtro');
 });
 
 
-router.get('/:id', async (req,res, next) =>{
-  try
-  {
-  const {id} = req.params;
-  const product = await service.findOne(id);
-  res.json(product);
+router.get('/:id', validatorHandler(getProductSchema,'params'),
+  async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const product = await service.findOne(id);
+      res.json(product);
+    }
+    catch (error) {
+      next(error);
+    }
   }
-  catch(error){
-    next(error);
-  }
+);
 
-});
-
-router.post('/',async (req,res)=>{
+router.post('/', validatorHandler(createProductSchema, 'body'),
+  async (req, res) => {
   const body = req.body;
-  console.log('elbody',body);
+  console.log('elbody', body);
   const newProduct = await service.create(body);
   res.status(201).json(newProduct);
 });
 
-router.patch('/:id',async (req,res, next)=>{
-  try{
-  const {id} = req.params;
+router.patch('/:id', validatorHandler(updateProductSchema,'body'),
+  async (req, res, next) => {
+  try {
+    const { id } = req.params;
     const body = req.body;
-    const product = await service.update(id,body);
+    const product = await service.update(id, body);
   }
-  catch(error){
+  catch (error) {
     next(error);
   }
 
 });
 
-router.delete('/:id',async (req,res)=>{
-  const {id} = req.params;
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
   const rta = await service.delete(id);
   res.json(rta);
 }
