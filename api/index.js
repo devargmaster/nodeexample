@@ -20,7 +20,13 @@ const options = {
 }
 
 app.use(cors());
+app.get('/api',(req,res)=>{
+  res.send('Hola mi server en express');
+});
 
+app.get('/api/nueva-ruta',(req,res)=>{
+  res.send('Hola soy una nueva ruta');
+});
 routerApi(app);
 app.use(logErrors);
 app.use(boomErrorHandler);
