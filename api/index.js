@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-const whitelist = ['http://localhost:8000','https://myapp.co'];
+const whitelist = ['http://localhost:8000','https://hitflow.com.ar'];
 const options = {
   origin : (origin, callback) => {
     if (whitelist.includes(origin) || !origin)
@@ -21,12 +21,9 @@ const options = {
 
 app.use(cors());
 app.get('/api',(req,res)=>{
-  res.send('Hola mi server en express');
+  res.send('Server Express sobre Vercel');
 });
 
-app.get('/api/nueva-ruta',(req,res)=>{
-  res.send('Hola soy una nueva ruta');
-});
 routerApi(app);
 app.use(logErrors);
 app.use(boomErrorHandler);
