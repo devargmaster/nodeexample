@@ -21,7 +21,7 @@ const options = {
 
 app.use(cors());
 app.get('/api',(req,res)=>{
-  res.send('Server Express sobre Vercel');
+  res.send('Server Express HitFlow');
 });
 
 routerApi(app);
