@@ -4,6 +4,9 @@ const USER = encodeURIComponent(process.env.DB_USER);
 const PASSWORD = encodeURIComponent(process.env.DB_PASSWORD);
 const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
 
-const sequelize = new Sequelize(URI,{dialect: 'postgres',logging:true,});
+const sequelize = new Sequelize(URI,
+    {
+        dialect: 'postgres',
+        logging:console.log,});
 
 module.exports = sequelize;
