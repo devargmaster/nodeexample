@@ -6,9 +6,16 @@ const router = express.Router();
 const service = new ProductsService();
 
 //todo lo que es routing deberia ser solo eso y no incluir logica de negocio
-router.get('/', async (req, res) => {
-  const products = await service.find();
-  res.json(products);
+router.get('/', async (req, res,next) => {
+  try
+  {
+    const products = await service.find();
+    res.json(products);
+  }
+  catch(error)
+  {
+    next(error);
+  }
 });
 
 router.get('/filter', async (req, res) => {

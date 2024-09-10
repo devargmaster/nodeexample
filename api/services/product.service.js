@@ -1,23 +1,25 @@
 
 const { faker, da } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
+const pool = require('../libs/postgres.pool');
+const sequelize = require('../libs/sequelize');
 class ProductsService {
   constructor(){
    this.products = [];
-   this.generate();
+  //  this.generate();
   }
-  generate(){
-    const limit = 100;
-    for (let index = 0; index <limit; index++){
-     this.products.push({
-       id:faker.datatype.uuid(),
-       name: faker.commerce.productName(),
-       price: parseInt(faker.commerce.price(),10),
-       image: faker.image.imageUrl(),
-       isBlock: faker.datatype.boolean()
-     });
-    }
-  }
+  // generate(){
+  //   const limit = 100;
+  //   for (let index = 0; index <limit; index++){
+  //    this.products.push({
+  //      id:faker.datatype.uuid(),
+  //      name: faker.commerce.productName(),
+  //      price: parseInt(faker.commerce.price(),10),
+  //      image: faker.image.imageUrl(),
+  //      isBlock: faker.datatype.boolean()
+  //    });
+  //   }
+  // }
 
   async create(data) {
     const newProduct = {
@@ -34,7 +36,13 @@ class ProductsService {
     //     resolve(this.products);
     //   },5000);
     // });
-    return this.products;
+    const query = 'SELECT * FROM tasks';
+    const [data,metadata] = await sequelize.query(query);
+
+    return {
+      data,
+      metadata
+    };
   }
 
  async  findOne(id){
