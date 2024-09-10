@@ -6,7 +6,47 @@ const { updateUserSchema, createUserSchema, getUserSchema } = require('./../sche
 
 const router = express.Router();
 const service = new UserService();
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: The auto-generated id of the user
+ *         name:
+ *           type: string
+ *           description: The name of the user
+ *         email:
+ *           type: string
+ *           description: The email of the user
+ *       required:
+ *         - name
+ *         - email
+ *       example:
+ *         id: d5fE_asz
+ *         name: John Doe
+ *         email: johndoe@example.com
+ */
 
+/**
+ * @swagger
+ * /users:
+ *   get:
+ *     summary: Returns the list of all the users
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: The list of the users
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
+ */
 router.get('/', async (req, res, next) => {
   try {
     const categories = await service.find();
