@@ -16,20 +16,21 @@ const service = new UserService();
  *         id:
  *           type: string
  *           description: The auto-generated id of the user
- *         name:
- *           type: string
- *           description: The name of the user
  *         email:
  *           type: string
  *           description: The email of the user
+ *         password:
+ *           type: string
+ *           description: The password of the user
  *       required:
- *         - name
  *         - email
+ *         - password
  *       example:
  *         id: d5fE_asz
- *         name: John Doe
+ *         password: John Doe
  *         email: johndoe@example.com
  */
+
 
 /**
  * @swagger
@@ -68,7 +69,28 @@ router.get('/:id',
     }
   }
 );
-
+/**
+ * @swagger
+ * /users:
+ *   post:
+ *     summary: Create a new user
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/User'
+ *     responses:
+ *       201:
+ *         description: The user was successfully created
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ *       400:
+ *         description: Bad request
+ */
 router.post('/',
   validatorHandler(createUserSchema, 'body'),
   async (req, res, next) => {
