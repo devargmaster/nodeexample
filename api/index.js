@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 // Integracion de  Swagger
 
 app.use(express.json());
-const whitelist = ['http://localhost:8000','https://hitflow.com.ar'];
+const whitelist = ['http://localhost:8000','https://hitflow.com.ar','https://whispering-brook-12889-24774d694fdb.herokuapp.com'];
 const options = {
   origin : (origin, callback) => {
     if (whitelist.includes(origin) || !origin)
