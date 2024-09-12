@@ -1,11 +1,12 @@
+
 const { faker, da } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
 const pool = require('../libs/postgres.pool');
 const sequelize = require('../libs/sequelize');
 class ProductsService {
-  constructor() {
-    this.products = [];
-    //  this.generate();
+  constructor(){
+   this.products = [];
+  //  this.generate();
   }
   // generate(){
   //   const limit = 100;
@@ -23,58 +24,59 @@ class ProductsService {
   async create(data) {
     const newProduct = {
       id: faker.datatype.uuid(),
-      ...data, // Combina las propiedades de data con las de newProduct
+      ...data // Combina las propiedades de data con las de newProduct
     };
     this.products.push(newProduct);
     return newProduct;
   }
 
-  async find() {
+  async find(){
     // return new Promise((resolve,reject)=>{
     //   setTimeout(()=>{
     //     resolve(this.products);
     //   },5000);
     // });
     const query = 'SELECT * FROM tasks';
-    const [data, metadata] = await sequelize.query(query);
+    const [data,metadata] = await sequelize.query(query);
 
     return {
       data,
-      metadata,
+      metadata
     };
   }
 
-  async findOne(id) {
-    const product = this.products.find((item) => item.id === id);
-    if (!product) {
+ async  findOne(id){
+    const product = this.products.find(item => item.id===id);
+    if(!product){
       throw boom.notFound('Product not found');
     }
-    if (product.isBlock) {
+    if (product.isBlock){
       throw boom.conflict('Product is blocked');
     }
     return product;
   }
 
-  async update(id, changes) {
-    const index = this.products.findIndex((item) => item.id === id);
-    if (index === -1) {
+ async  update(id,changes){
+    const index = this.products.findIndex(item => item.id === id);
+    if(index === -1){
       throw boom.notFound('Product not found');
     }
     const product = this.products[index];
     this.products[index] = {
       ...product,
-      ...changes,
+      ...changes
     };
     return this.products[index];
+
   }
 
-  async delete(id) {
-    const index = this.products.findIndex((item) => item.id === id);
-    if (index === -1) {
+  async delete(id){
+    const index = this.products.findIndex(item => item.id === id);
+    if(index === -1){
       throw new Error('Product not found');
     }
-    this.products.splice(index, 1);
-    return { id };
+    this.products.splice(index,1);
+    return {id};
   }
 }
 
