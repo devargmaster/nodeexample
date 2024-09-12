@@ -29,6 +29,11 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+// Ruta base simple
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 
 // Configurar Rutas
 routerApi(app);
@@ -38,8 +43,7 @@ app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 
-// Integración de Swagger
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+swaggerDocument(app, port);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
