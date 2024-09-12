@@ -2,7 +2,11 @@ const express = require('express');
 
 const UserService = require('./../services/user.service');
 const validatorHandler = require('../middlewares/validator.hander');
-const { updateUserSchema, createUserSchema, getUserSchema } = require('./../schemas/user.schema');
+const {
+  updateUserSchema,
+  createUserSchema,
+  getUserSchema,
+} = require('./../schemas/user.schema');
 
 const router = express.Router();
 const service = new UserService();
@@ -31,7 +35,6 @@ const service = new UserService();
  *         email: johndoe@example.com
  */
 
-
 /**
  * @swagger
  * /users:
@@ -57,7 +60,8 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id',
+router.get(
+  '/:id',
   validatorHandler(getUserSchema, 'params'),
   async (req, res, next) => {
     try {
@@ -91,7 +95,8 @@ router.get('/:id',
  *       400:
  *         description: Bad request
  */
-router.post('/',
+router.post(
+  '/',
   validatorHandler(createUserSchema, 'body'),
   async (req, res, next) => {
     try {
@@ -104,7 +109,8 @@ router.post('/',
   }
 );
 
-router.patch('/:id',
+router.patch(
+  '/:id',
   validatorHandler(getUserSchema, 'params'),
   validatorHandler(updateUserSchema, 'body'),
   async (req, res, next) => {
@@ -119,13 +125,14 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
+router.delete(
+  '/:id',
   validatorHandler(getUserSchema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       await service.delete(id);
-      res.status(201).json({id});
+      res.status(201).json({ id });
     } catch (error) {
       next(error);
     }
