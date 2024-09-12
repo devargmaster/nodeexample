@@ -10,9 +10,11 @@ const options = {
       version: '1.0.0',
     },
     servers: [
-            {
-                url: 'http://localhost:3000/api/v1',
-            }
+      {
+        url: process.env.NODE_ENV === 'production'
+          ? 'https://whispering-brook-12889-24774d694fdb.herokuapp.com/api/v1'
+          : 'http://localhost:3000/api/v1',
+      }
     ],
   },
   apis: ['./api/routes/*.js'], // Rutas a tus archivos de rutas
@@ -22,7 +24,7 @@ const swaggerSpec = swaggerJSDoc(options);
 
 function swaggerDocs(app, port) {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  console.log(`Swagger docs available at http://localhost:${port}/api-docs`);
+  console.log(`Swagger docs available at ${process.env.NODE_ENV === 'production' ? 'https://whispering-brook-12889-24774d694fdb.herokuapp.com' : 'http://localhost'}:${port}/api-docs`);
 }
 
 module.exports = swaggerDocs;
