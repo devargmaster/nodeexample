@@ -31,7 +31,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 // Ruta base simple
 app.get('/', (req, res) => {
-  res.send('API is running');
+  res.send('API is running On HitFlow');
 });
 
 
