@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 // Middleware para parsear JSON
 app.use(express.json());
 
-// Configuración de COR S
+// Configuración de CORS
 const whitelist = [
   'http://localhost:8000',
   'https://hitflow.com.ar',
