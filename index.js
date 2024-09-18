@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 // Configurar Rutas
 routerApi(app);
 
-// Middlewares de manejo de errores
+// Middlewares de manejo de  errores
 app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
