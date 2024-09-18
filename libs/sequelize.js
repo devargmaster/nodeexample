@@ -1,11 +1,9 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
-const { config } = require('../config/config');
 const setupModels = require('../db');
-const USER = encodeURIComponent(process.env.DB_USER);
-const PASSWORD = encodeURIComponent(process.env.DB_PASSWORD);
-const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
 
+const isProduction = process.env.NODE_ENV === 'production';
+const URI = isProduction ? process.env.DATABASE_URL : `postgres://${encodeURIComponent(process.env.DB_USER)}:${encodeURIComponent(process.env.DB_PASSWORD)}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
 const sequelize = new Sequelize(URI, {
   dialect: 'postgres',
