@@ -9,12 +9,12 @@ const sequelize = new Sequelize(URI, {
   dialect: 'postgres',
   protocol: 'postgres',
   logging: false,
-  dialectOptions: {
+  dialectOptions: isProduction ? {
     ssl: {
       require: true,
       rejectUnauthorized: false,
     },
-  },
+  } : {},
 });
 
 setupModels(sequelize);
