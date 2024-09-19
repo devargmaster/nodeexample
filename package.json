@@ -8,6 +8,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint .",
+    "migrate": "sequelize-cli db:migrate --config db/config.cjs",
     "migrations:generate": "sequelize-cli migration:generate --name",
     "migrations:run": "sequelize-cli db:migrate",
     "migrations:revert": "sequelize-cli db:migrate:undo"

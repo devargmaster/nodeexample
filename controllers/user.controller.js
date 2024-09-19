@@ -1,5 +1,6 @@
 import boom from '@hapi/boom';
-import {models} from '../libs/sequelize.js';
+import sequelize from '../libs/sequelize.cjs';
+const { models } = sequelize;
 class UserController {
   constructor() {}
 
