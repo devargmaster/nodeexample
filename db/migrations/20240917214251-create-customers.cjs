@@ -1,6 +1,6 @@
 'use strict';
 
-const {CustomerSchema, CUSTOMER_TABLE} = require('./../models/customer.model');
+const {CustomerSchema, CUSTOMER_TABLE} = require('../models/customer.model.cjs');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
