@@ -1,6 +1,5 @@
-const boom = require('@hapi/boom');
-const getConnection = require('../libs/postgres');
-const {models} = require('./../libs/sequelize');
+import boom from '@hapi/boom';
+import {models} from './../libs/sequelize.js';
 class UserService {
   constructor() {}
 
@@ -35,4 +34,4 @@ class UserService {
   }
 }
 
-module.exports = UserService;
+export default UserService;

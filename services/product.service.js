@@ -1,8 +1,8 @@
 
-const { faker, da } = require('@faker-js/faker');
-const boom = require('@hapi/boom');
-const pool = require('../libs/postgres.pool');
-const sequelize = require('../libs/sequelize');
+import { faker, da } from '@faker-js/faker';
+import boom from '@hapi/boom';
+import {sequelize} from '../libs/sequelize.js';
+
 class ProductsService {
   constructor(){
    this.products = [];
@@ -80,4 +80,4 @@ class ProductsService {
   }
 }
 
-module.exports = ProductsService;
+export default ProductsService;

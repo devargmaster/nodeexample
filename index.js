@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const routerApi = require('./routes');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger');
-const { logErrors, boomErrorHandler, errorHandler } = require('./middlewares/error.handler');
+import express from 'express';
+import cors from 'cors';
+import routerApi from './routes/index.js';
+import swaggerUi from'swagger-ui-express';
+import swaggerDocument from './swagger.js';
+import { logErrors, boomErrorHandler, errorHandler } from './middlewares/error.handler.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
 // Configurar Rutas
 routerApi(app);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Middlewares de manejo de  errores
 app.use(logErrors);
 app.use(boomErrorHandler);

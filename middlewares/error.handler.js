@@ -1,5 +1,5 @@
-const e = require("express");
-const { stack } = require("../routes/products.router");
+import e from "express";
+
 
 function logErrors(err, req, res, next) {
   console.error(err.stack);
@@ -23,4 +23,4 @@ function errorHandler(err, req, res, next) {
 
   }
 
-module.exports = { logErrors, errorHandler, boomErrorHandler };
+export { logErrors, errorHandler, boomErrorHandler };
