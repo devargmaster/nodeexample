@@ -1,6 +1,6 @@
 // swagger.js
-const swaggerJSDoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 const options = {
   definition: {
@@ -27,4 +27,4 @@ function swaggerDocs(app, port) {
   console.log(`Swagger docs available at ${process.env.NODE_ENV === 'production' ? 'https://whispering-brook-12889-24774d694fdb.herokuapp.com' : 'http://localhost'}:${port}/api-docs`);
 }
 
-module.exports = swaggerDocs;
+export default swaggerDocs;
