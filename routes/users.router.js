@@ -1,10 +1,11 @@
 import express from 'express';
-import UserService from './../services/user.service.js';
+import UserController from './../controllers/user.controller.js';
 import validatorHandler from '../middlewares/validator.hander.js';
 import { updateUserSchema, createUserSchema, getUserSchema } from './../schemas/user.schema.js';
+import userController from './../controllers/user.controller.js';
 
 const router = express.Router();
-const service = new UserService();
+
 /**
  * @swagger
  * components:
@@ -47,27 +48,30 @@ const service = new UserService();
  *               items:
  *                 $ref: '#/components/schemas/User'
  */
-router.get('/', async (req, res, next) => {
-  try {
-    const categories = await service.find();
-    res.json(categories);
-  } catch (error) {
-    next(error);
-  }
-});
 
-router.get('/:id',
-  validatorHandler(getUserSchema, 'params'),
-  async (req, res, next) => {
-    try {
-      const { id } = req.params;
-      const category = await service.findOne(id);
-      res.json(category);
-    } catch (error) {
-      next(error);
-    }
-  }
-);
+
+router.get('/', UserController.find);
+
+/**
+ * @swagger
+ * /users:
+ *   getbyid:
+ *     summary: Returns one user by id
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: Return one user
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
+ */
+
+
+router.get('/:id',validatorHandler(getUserSchema, 'params'), userController.findOne);  
+
 /**
  * @swagger
  * /users:
@@ -90,45 +94,11 @@ router.get('/:id',
  *       400:
  *         description: Bad request
  */
-router.post('/',
-  validatorHandler(createUserSchema, 'body'),
-  async (req, res, next) => {
-    try {
-      const body = req.body;
-      const newCategory = await service.create(body);
-      res.status(201).json(newCategory);
-    } catch (error) {
-      next(error);
-    }
-  }
-);
 
-router.patch('/:id',
-  validatorHandler(getUserSchema, 'params'),
-  validatorHandler(updateUserSchema, 'body'),
-  async (req, res, next) => {
-    try {
-      const { id } = req.params;
-      const body = req.body;
-      const category = await service.update(id, body);
-      res.json(category);
-    } catch (error) {
-      next(error);
-    }
-  }
-);
+router.post('/',validatorHandler(createUserSchema,'body'), userController.create);
 
-router.delete('/:id',
-  validatorHandler(getUserSchema, 'params'),
-  async (req, res, next) => {
-    try {
-      const { id } = req.params;
-      await service.delete(id);
-      res.status(201).json({id});
-    } catch (error) {
-      next(error);
-    }
-  }
-);
+router.patch('/:id', validatorHandler(updateUserSchema, 'body'), UserController.update);
+
+router.delete('/:id',  validatorHandler(getUserSchema, 'params'), userController.delete);
 
 export default router;
