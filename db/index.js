@@ -1,9 +1,8 @@
-const { User, UserSchema } = require('./models/user.model');
-const { Customer, CustomerSchema} = require('./models/customer.model');
-
+import { Customer,CustomerSchema } from './models/customer.model.js';
+import { User,UserSchema } from './models/user.model.js';
 function setupModels(sequelize) {
     User.init(UserSchema, User.config(sequelize));
     Customer.init(CustomerSchema, Customer.config(sequelize));
 }
 
-module.exports = setupModels;
+export default setupModels;

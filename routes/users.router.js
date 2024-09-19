@@ -1,8 +1,7 @@
-const express = require('express');
-
-const UserService = require('./../services/user.service');
-const validatorHandler = require('../middlewares/validator.hander');
-const { updateUserSchema, createUserSchema, getUserSchema } = require('./../schemas/user.schema');
+import express from 'express';
+import UserService from './../services/user.service.js';
+import validatorHandler from '../middlewares/validator.hander.js';
+import { updateUserSchema, createUserSchema, getUserSchema } from './../schemas/user.schema.js';
 
 const router = express.Router();
 const service = new UserService();
@@ -132,4 +131,4 @@ router.delete('/:id',
   }
 );
 
-module.exports = router;
+export default router;
