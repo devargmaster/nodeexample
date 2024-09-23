@@ -3,7 +3,7 @@ import { faker, da } from '@faker-js/faker';
 import boom from '@hapi/boom';
 import {sequelize} from '../libs/sequelize.cjs';
 
-class ProductsService {
+class ProductController {
   constructor(){
    this.products = [];
   //  this.generate();
@@ -80,4 +80,4 @@ class ProductsService {
   }
 }
 
-export default ProductsService;
+export default ProductController;
