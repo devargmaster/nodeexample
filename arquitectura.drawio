@@ -1,0 +1,130 @@
+<mxfile host="65bd71144e">
+    <diagram id="nnP1UOFdGeOe2ODP4pVs" name="Page-1">
+        <mxGraphModel dx="1073" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="33" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontFamily=Verdana;fontSize=10;" parent="1" source="30" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#CC6600;sketch=1;labelBackgroundColor=none;fontFamily=Verdana;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="867" y="152" width="363" height="118" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="v" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/storage/StorSimple_Data_Managers.svg;" parent="1" vertex="1">
+                    <mxGeometry x="632" y="310" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Produccion" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Production_Ready_Database.svg;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="120" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=none;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="4" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.12;entryY=0.244;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="4" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Node Js" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#8CC64F;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="150" width="73.5" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="FrontEnd&lt;br&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#205E00;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="151" y="350" width="73.5" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Docker.svg;" parent="1" vertex="1">
+                    <mxGeometry x="384" y="220" width="85.37" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.396;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="8" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="370" y="120" as="sourcePoint"/>
+                        <mxPoint x="540.7444" y="165.08000000000004" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;exitX=0.808;exitY=1.043;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="8" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="469.3699999999999" y="382.64670403834657" as="sourcePoint"/>
+                        <mxPoint x="599.008" y="330.004" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Docker-Compose" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.file_2;pointerEvents=1;" parent="1" vertex="1">
+                    <mxGeometry x="402.93" y="310" width="47.5" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Arquitectura de nodeexample" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" parent="1" vertex="1">
+                    <mxGeometry x="43" y="30" width="240" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;ul&gt;&lt;li&gt;&lt;font face=&quot;Verdana&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Representauna unica API&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font face=&quot;Verdana&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;En este caso puede tener mas de una responsabilidad&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" style="fillColor=none;strokeColor=none;html=1;fontSize=12;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="20" width="430" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;ul&gt;&lt;li&gt;&lt;font face=&quot;Verdana&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Representauna mas de una API&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font face=&quot;Verdana&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Cada API tiene una responsabilidad&lt;/span&gt;&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" style="fillColor=none;strokeColor=none;html=1;fontSize=12;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="30" width="430" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Desarrollo" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/storage/StorSimple_Data_Managers.svg;" parent="1" vertex="1">
+                    <mxGeometry x="1340" y="330" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="32" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="960" y="330" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Node Js API1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#8CC64F;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="890" y="156" width="73.5" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="22" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="930" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="FrontEnd&lt;br&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#205E00;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="940" y="510" width="73.5" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Docker.svg;" parent="1" vertex="1">
+                    <mxGeometry x="1124" y="180" width="85.37" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;entryX=0.396;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1110" y="130" as="sourcePoint"/>
+                        <mxPoint x="1339.008" y="195.024" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;exitX=0.808;exitY=1.043;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="23" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1209.37" y="392.64670403834657" as="sourcePoint"/>
+                        <mxPoint x="1339.008" y="340.004" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="Docker-Compose" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.file_2;pointerEvents=1;" parent="1" vertex="1">
+                    <mxGeometry x="1142.93" y="250" width="47.5" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Produccion" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Production_Ready_Database.svg;" parent="1" vertex="1">
+                    <mxGeometry x="1340" y="150" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Node Js API2" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#8CC64F;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1000" y="156" width="73.5" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.361;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Verdana;fontSize=10;" parent="1" source="32" target="30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Proxy para comunicarse con backend" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=10;fillColor=#CC6600;" parent="1" vertex="1">
+                    <mxGeometry x="916.75" y="360" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="JZIxxsfieFmg6imVR_Rj-34" value="MongoDB&lt;br&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/storage/StorSimple_Data_Managers.svg;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="420" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="JZIxxsfieFmg6imVR_Rj-35" style="edgeStyle=none;html=1;exitX=0.562;exitY=0.986;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="8" target="JZIxxsfieFmg6imVR_Rj-34">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="479.9989599999999" y="374" as="sourcePoint"/>
+                        <mxPoint x="659.02" y="417.1986790610471" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="-9jw_N-sh-vEpNl2CmHL" name="Page-2">
+        <mxGraphModel dx="1073" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
