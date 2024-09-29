@@ -34,7 +34,6 @@ class ProductController {
     return updatedProduct;
 
   }
-  
 
   async delete(id){
     const product = await this.findOne(id);
