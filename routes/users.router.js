@@ -1,6 +1,6 @@
 import express from 'express';
 import UserController from './../controllers/user.controller.js';
-import validatorHandler from '../middlewares/validator.hander.js';
+import validatorHandler from '../middlewares/validator.handler.js';
 import { updateUserSchema, createUserSchema, getUserSchema } from './../schemas/user.schema.js';
 import userController from './../controllers/user.controller.js';
 
@@ -70,7 +70,7 @@ router.get('/', UserController.find);
  */
 
 
-router.get('/:id',validatorHandler(getUserSchema, 'params'), userController.findOne);  
+router.get('/:id', validatorHandler(getUserSchema, 'params'), userController.findOne);
 
 /**
  * @swagger
@@ -95,10 +95,10 @@ router.get('/:id',validatorHandler(getUserSchema, 'params'), userController.find
  *         description: Bad request
  */
 
-router.post('/',validatorHandler(createUserSchema,'body'), userController.create);
+router.post('/', validatorHandler(createUserSchema, 'body'), userController.create);
 
 router.patch('/:id', validatorHandler(updateUserSchema, 'body'), UserController.update);
 
-router.delete('/:id',  validatorHandler(getUserSchema, 'params'), userController.delete);
+router.delete('/:id', validatorHandler(getUserSchema, 'params'), userController.delete);
 
 export default router;

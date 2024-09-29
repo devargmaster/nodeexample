@@ -1,11 +1,11 @@
-const express = require('express');
+import express from 'express';
 
-const CategoryService = require('./../services/category.service');
-const validatorHandler = require('./../middlewares/validator.handler');
-const { createCategorySchema, updateCategorySchema, getCategorySchema } = require('./../schemas/category.schema');
+import CategoryController from './../controllers/categories.controller.js';
+import validatorHandler from '../middlewares/validator.handler.js';
+import { createCategorySchema, updateCategorySchema, getCategorySchema } from './../schemas/category.schema.js';
 
 const router = express.Router();
-const service = new CategoryService();
+const service = CategoryController;
 
 router.get('/', async (req, res, next) => {
   try {
@@ -63,11 +63,11 @@ router.delete('/:id',
     try {
       const { id } = req.params;
       await service.delete(id);
-      res.status(201).json({id});
+      res.status(201).json({ id });
     } catch (error) {
       next(error);
     }
   }
 );
 
-module.exports = router;
+export default router;

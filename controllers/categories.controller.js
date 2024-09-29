@@ -1,11 +1,13 @@
-const boom = require('@hapi/boom');
-
-class CategoryService {
+import boom from '@hapi/boom';
+import sequelize from './../libs/sequelize.cjs';
+const { models } = sequelize;
+class CategoryController {
 
   constructor(){
   }
   async create(data) {
-    return data;
+    const newCategory = await models.Category.create(data);
+    return newCategory;
   }
 
   async find() {
@@ -29,4 +31,4 @@ class CategoryService {
 
 }
 
-module.exports = CategoryService;
+export default new CategoryController;
